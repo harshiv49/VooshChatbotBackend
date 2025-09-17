@@ -4,8 +4,8 @@ import {
   generateSessionId,
   getSessionData,
   clearSessionData,
-} from "../utils/session";
-import prisma from "../utils/prisma"; // Import the Prisma client
+} from "../utils/session.js";
+import prisma from "../utils/prisma.js"; // Import the Prisma client
 
 const sessionRouter = Router();
 

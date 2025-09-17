@@ -1,9 +1,9 @@
 // src/utils/rag.ts
 import { Document } from "@langchain/core/documents";
-import { OpenAIChat } from "./openai";
-import { ChatMessage } from "../types";
-import { RETRIEVAL_CONFIG } from "./config";
-import { SessionData } from "./session";
+import { OpenAIChat } from "./openai.js";
+import { ChatMessage } from "../types.js";
+import { RETRIEVAL_CONFIG } from "./config.js";
+import { SessionData } from "./session.js";
 
 // This is a placeholder, you would replace it with your serper/web search API call
 async function performWebSearch(
@@ -54,7 +54,7 @@ export async function shouldRetrieveDocuments(
       }
 
       const cachedContext = entry.documents
-        .map((doc) => doc.pageContent)
+        .map((doc: any) => doc.pageContent)
         .join("\n\n");
       const confidence = await assessAnswerConfidence(
         query,

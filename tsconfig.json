@@ -1,0 +1,32 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    /* Base Options */
+    "target": "ES2022", // Compile to modern JavaScript that Render's Node.js environment supports.
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"], // Include type definitions for modern ES features.
+
+    /* Output Directory */
+    "outDir": "./dist", // CRITICAL: All compiled JavaScript goes here. Matches your "start" script.
+    "rootDir": "./src", // Specifies the root directory of your source .ts files.
+
+    /* Strict Type-Checking Options */
+    "strict": true, // Enable all strict type-checking options for better code quality.
+    "noImplicitAny": true, // Raise error on expressions and declarations with an implied 'any' type.
+
+    /* Module Interoperability */
+    "esModuleInterop": true, // Enables compatibility with CommonJS modules. Essential for a Node.js project.
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+
+    /* Advanced Options */
+    "skipLibCheck": true, // Skip type checking of declaration files (.d.ts). Speeds up compilation.
+    "sourceMap": true // Generate source maps for easier debugging in production.
+  },
+  "include": [
+    "src/**/*" // CRITICAL: Tells TypeScript to only compile files inside the 'src' folder.
+  ],
+  "exclude": [
+    "node_modules" // Explicitly ignore the node_modules folder.
+  ]
+}

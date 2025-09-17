@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { initializeRedis } from "../utils/session";
-import sessionRouter from "../routes/session";
-import chatRouter, { initializeVectorStoreAndOpenAI } from "../routes/chat";
+import { initializeRedis } from "./utils/session.js";
+import sessionRouter from "./routes/session.js";
+import chatRouter, { initializeVectorStoreAndOpenAI } from "./routes/chat.js";
 
 dotenv.config();
 

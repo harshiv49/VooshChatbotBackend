@@ -1,4 +1,4 @@
-import { ChatMessage } from "../types";
+import { ChatMessage } from "../types.js";
 // OpenAI API helper class for chat completions
 export class OpenAIChat {
   private apiKey: string;

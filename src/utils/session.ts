@@ -1,8 +1,7 @@
 // src/utils/session.ts
 import Redis from "redis";
 import { v4 as uuidv4 } from "uuid";
-import { RETRIEVAL_CONFIG } from "./config";
-import { ChatMessage, RetrievalEntry } from "../types";
+import { ChatMessage, RetrievalEntry } from "../types.js";
 
 export interface SessionData {
   history: ChatMessage[];
