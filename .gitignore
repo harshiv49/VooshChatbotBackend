@@ -1,0 +1,29 @@
+# Node.js
+# /node_modules: This is the folder where npm installs all the package dependencies. It is not needed for a deployed application as you would run 'npm install' on the server.
+node_modules
+
+# Logs
+# npm-debug.log*: This file is created by npm for debugging purposes.
+npm-debug.log*
+
+# Environment files
+# .env: This file contains sensitive information like API keys. It should never be committed to a public repository.
+.env
+
+# Build outputs
+# /.dist: If you use a build process that outputs to a 'dist' directory, you should ignore it.
+/dist
+# /build: Similarly, ignore a 'build' directory.
+/build
+
+# VS Code
+.vscode/
+
+# Other temporary files
+*.log
+*.pids
+*.pid
+*.seed
+*.js.map
+*.tsbuildinfo
+/src/generated/prisma

@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Connect to your Neon Postgres database
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Represents a chat session, identified by a unique ID
+model Session {
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  messages  Message[]
+}
+
+// Represents a single message within a chat session
+model Message {
+  id        String   @id @default(uuid())
+  content   String
+  role      Role
+  timestamp DateTime @default(now())
+
+  // Establishes the one-to-many relationship with the Session model
+  sessionId String
+  session   Session @relation(fields: [sessionId], references: [id])
+}
+
+// An enum to enforce message roles (user or assistant)
+enum Role {
+  USER
+  ASSISTANT
+}
