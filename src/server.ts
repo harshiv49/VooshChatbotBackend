@@ -18,8 +18,14 @@ app.use("/session", sessionRouter);
 app.use("/chat", chatRouter);
 
 // Health check and config endpoints
-app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+app.get("/api/health", (req, res) => {
+  // We send the structure that the frontend expects
+  res.json({
+    status: "ok",
+    features: {
+      ragAvailable: true, // You can add more feature flags here in the future
+    },
+  });
 });
 
 app.post("/config/retrieval", (req, res) => {
