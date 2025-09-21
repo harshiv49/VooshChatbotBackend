@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "npx prisma generate && npx tsc",
-    "create-index": "ts-node src/createIndex.ts"
+    "create-index": "ts-node src/create-index.ts"
   },
 
   "dependencies": {
